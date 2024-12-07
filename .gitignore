@@ -164,3 +164,17 @@ artifacts/*/*
 
 data/*
 !data/.gitkeep
+
+# Ignore WandB directory in the project folder
+wandb/
+
+<<<<<<< HEAD
+# Ignore the following file
+=======
+# Ignore this file
+>>>>>>> e969f167fe7d01d7e1056ee0ba4c39e8cb503153
+optuna_study.db
+optuna_deeplab.db
+optuna_segnet.db
+optuna_unet.db
+
