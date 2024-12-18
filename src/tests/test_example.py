@@ -1,8 +1,6 @@
 import pytest
 
-
-def add(a: int, b: int) -> int:
-    return a + b
+from src.main import add
 
 
 def test_adding() -> None:

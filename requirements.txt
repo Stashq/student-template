@@ -4,3 +4,4 @@ isort
 pytest
 mypy
 numpy
+python-dotenv
