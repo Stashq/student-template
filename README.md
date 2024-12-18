@@ -1,31 +1,31 @@
-# Student template
+# Student Template
 
-This template was made to suggest basic setup for student python projects.
+This template was made to suggest a basic setup for student Python projects.
 
-## Project structure
+## Project Structure
 
 The purpose of directories is to store:
 
-- artifacts - any kind of ML experiments output (models, plots, segmentation mask, ect.),
-- data - object of experiments,
-- notebooks - jupyter notebooks (.ipynb files),
-- src - source (all .py files).
+- **artifacts** - any kind of ML experiment outputs (models, plots, segmentation masks, etc.),
+- **data** - objects of experiments,
+- **notebooks** - Jupyter notebooks (.ipynb files),
+- **src** - source code (all .py files).
 
-## Project tools
+## Project Tools
 
-In the repository you can find a few python tools suggestions.
+In the repository, you can find a few Python tool suggestions.
 
 ### [Black](https://github.com/psf/black)
 
-Python code formatter. You can find predefined configs in `.black.cfg` file.
+Python code formatter. You can find predefined configs in the `.black.cfg` file.
 
 ### [Flake8](https://github.com/PyCQA/flake8)
 
-Linting tool that checks Python codebase for errors, styling issues and complexity. It covers more use cases than `Black` but does not format code. You can find predefined configs in `.flake8` file.
+Linting tool that checks Python codebase for errors, styling issues, and complexity. It covers more use cases than `Black` but does not format code. You can find predefined configs in the `.flake8` file.
 
 ### [Isort](https://pycqa.github.io/isort/)
 
-Python library imports sorter. You can find predefined configs in `.isort.cfg` file.
+Python library imports sorter. You can find predefined configs in the `.isort.cfg` file.
 
 ### [PyTest](https://docs.pytest.org/en/)
 
@@ -34,7 +34,7 @@ Python testing framework.
 ### [MyPy](https://mypy.readthedocs.io/en/stable/getting_started.html)
 
 Optional static type checker for Python that aims to combine the benefits of dynamic (or "duck") typing and static typing.
-If you have problem with missing stubs for certain library, add to `mypy.ini` following lines:
+If you have problems with missing stubs for a certain library, add the following lines to `mypy.ini`:
 
 ```ini
 [mypy-LIBRARY_NAME.*]
@@ -47,18 +47,19 @@ Library for a wide variety of mathematical operations on arrays, essential for m
 
 ### [Make](https://www.tutorialspoint.com/unix_commands/make.htm)
 
-In context of this repo `make` enables you to define aliases for more complex commands so you don't have to rewrite them every time.
+In the context of this repo, `make` enables you to define aliases for more complex commands so you don't have to rewrite them every time.
 
 ## Usage
 
-### First steps
+### First Steps
 
-1. Create a virtual environment.
-If you never did it before, you may want to read about one of following tools: [python venv](https://docs.python.org/3/tutorial/venv.html#creating-virtual-environments), [conda](https://conda.io/projects/conda/en/latest/index.html), [poetry](https://python-poetry.org/docs/managing-environments/) (more advanced). For switching between python versions read about [pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#unixmacos). It's recommended to choose python version available on [scientific cluster](https://www.sc.uni-leipzig.de/02_Resources/Software/Categories/lang_modules/#python) as you will perhaps train models there.
-2. Install dependencies.
-Development tools like `flake8` are listed in `requirements.txt`. Install them using the tool chosen in the previous step.
+1. **Create a virtual environment.**
+   If you have never done it before, you may want to read about one of the following tools: [Python venv](https://docs.python.org/3/tutorial/venv.html#creating-virtual-environments), [Conda](https://conda.io/projects/conda/en/latest/index.html), or [Poetry](https://python-poetry.org/docs/managing-environments/) (more advanced). For switching between Python versions, read about [Pyenv](https://github.com/pyenv/pyenv?tab=readme-ov-file#unixmacos). It's recommended to choose a Python version available on the [scientific cluster](https://www.sc.uni-leipzig.de/02_Resources/Software/Categories/lang_modules/#python) as you may train models there.
 
-### Makefile predefined commands
+2. **Install dependencies.**
+   Development tools like `flake8` are listed in `requirements.txt`. Install them using the tool chosen in the previous step.
+
+### Makefile Predefined Commands
 
 Run:
 
@@ -68,22 +69,22 @@ Run:
 - `make format` to run `isort` and `black` commands together,
 - `make mypy` to check type hints,
 - `make test` to run tests,
-- `make build` to format run `isort`, `black`, `flake8`, `mypy` and `test` respectively.
+- `make build` to sequentially run `isort`, `black`, `flake8`, `mypy`, and `test`.
 
 Feel free to define your custom commands if you want.
 
-## Protips
+## Pro Tips
 
-1. Write your code in python scripts, not in notebooks, otherwise you'll produce spaghetti code. The only exception can be (but doesn't have to be) Exploratory Data Analysis (EDA) and visualizations.
+1. Write your code in Python scripts, not in notebooks; otherwise, you'll produce spaghetti code. The only exception can (but doesn't have to) be Exploratory Data Analysis (EDA) and visualizations.
 2. Write [type hints](https://docs.python.org/3/library/typing.html). You can check them with `mypy`.
-3. Commit. Probably more often than you usually do. Before you commit, format and check your code (`make build`).
+3. Commit often, probably more often than you usually do. Before committing, format and check your code (`make build`).
 4. Refactor your code every time you finish implementing a new feature.
-5. Use code debugger.
-6. Create a branch when you bring new feature and keep the main branch away from bugs. Merge the main branch with the feature branch only when you are sure that there are no bugs.
-7. Don't be afraid to use typical constructions for python like [comprehension list](https://docs.python.org/3/library/typing.html). In most cases they make your code more readable.
-8. Write tests for crucial components, you'll find bugs much quicker. Don't spend too much time on that, you should stay focused on experiments. Keep your tests in `src/tests` directory.
-9. Use experiment tracking tools like [Tensor Board](https://www.tensorflow.org/tensorboard), [W&B](https://wandb.ai/site), ect.
-10. Check if there is no already existing solution for your problem. A good example is a training / test loop implementation. If you use [tensorflow](https://www.tensorflow.org/tutorials) add [keras](https://www.tensorflow.org/guide/keras) to your code and if you use [pytorch](https://pytorch.org/tutorials/beginner/basics/intro.html), add [fastai](https://docs.fast.ai/examples/migrating_pytorch_verbose.html) or [lightning](https://lightning.ai/docs/pytorch/stable/starter/introduction.html) to train and evaluate your model. These frameworks provide boilerplate code for deep learning experiments.
+5. Use a code debugger.
+6. Create a branch when introducing a new feature and keep the main branch bug-free. Merge the main branch with the feature branch only when you are sure there are no bugs.
+7. Don't be afraid to use typical Python constructs like [list comprehensions](https://docs.python.org/3/library/typing.html). In most cases, they make your code more readable.
+8. Write tests for crucial components; you'll find bugs much quicker. Don't spend too much time on them; you should stay focused on experiments. Keep your tests in the `src/tests` directory.
+9. Use experiment tracking tools like [TensorBoard](https://www.tensorflow.org/tensorboard), [W&B](https://wandb.ai/site), etc.
+10. Check if there is already an existing solution for your problem. A good example is a training/test loop implementation. If you use [TensorFlow](https://www.tensorflow.org/tutorials), add [Keras](https://www.tensorflow.org/guide/keras) to your code, and if you use [PyTorch](https://pytorch.org/tutorials/beginner/basics/intro.html), add [FastAI](https://docs.fast.ai/examples/migrating_pytorch_verbose.html) or [Lightning](https://lightning.ai/docs/pytorch/stable/starter/introduction.html) to train and evaluate your model. These frameworks provide boilerplate code for deep learning experiments.
 
 ## HPC Cluster
 
@@ -97,13 +98,14 @@ To use it, first, [apply](https://service.rz.uni-leipzig.de/scientific-computing
 
 Before running your experiments you have to setup your project on the cluster. To do it follow the steps:
 
-1. [Log in](https://lab.sc.uni-leipzig.de/jupyter/hub/spawn).
+1. **[Log in]**(https://lab.sc.uni-leipzig.de/jupyter/hub/spawn)
 After you get permission, log in to university jupyter lab server and select the machine you want to use. Choose minimal hardware requirements (single cpu, no gpu) as you won't need computational power to set up your project.
-2. Clone your repository.
+2. **Clone your repository**
 Open the terminal, clone your repository (`git clone <your_repo_link>`).
-3. Load python.
+3. **Load python**
 Check available python versions using command `module avail python` and choose same as you work with on your local machine (e.g. 3.12.3). Then load it using command `module load`. Example: `module load Python/3.12.3-GCCcore-13.3.0`.
-4. Create a virtual environment. There are two scenarios:
+4. **Create a virtual environment**
+There are two scenarios:
    1. All libraries that you're using in your project are preinstalled on the cluster.
    Check it using command `module avail <package_name>`. If all libraries are on the list,then just load them using command `module load <package_name>`.
    Tips:
@@ -111,7 +113,7 @@ Check available python versions using command `module avail python` and choose s
       2. Run your experiment scripts to make sure that libraries work well together. Otherwise use other scenario.
    2. Some libraries aren't preinstalled or you get compatibility errors.
    Go to your work directory `cd <directory_name>`. Then create your virtual environment: `python -m venv .venv`, activate it `source .venv/bin/activate` and install libraries: `pip install -r requirements.txt`.
-5. Exit cluster.
+5. **Exit cluster**
 Go to `File -> Hub Control Panel` and click `Stop My Server`.
 Now your session is over.
 
